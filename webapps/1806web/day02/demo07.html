@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+	<form action="http://doc.tedu.cn" method="get">
+		<!-- 文本框   size:长度    name:提交数据的键（key）       用户输入的内容为值                maxLength:最大字符长度           
+		value:设置默认值   readonly：只读         placeholder:暂位文本-->
+		用户名:<input type="text" name="username" maxlength="5"  
+		 placeholder="用户名">
+		<br>密码：<input type="password" name="password" placeholder="密码"><br>
+		
+		<!-- 单选 -->
+		<input type="radio" name="gender" value="nan" id="nan">
+		<label for="nan">男</label>
+		
+		<input type="radio" name="gender" value="nv" id="nv">
+		<label for="nv">女</label><br>
+		
+		<!-- 多选 -->
+		兴趣爱好：<input type="checkbox" name="hobby" value="dlq" id="dlq">
+		<label for="dlq">打篮球</label>
+		
+		<input type="checkbox" name="hobby" value="wzry" id="wzry">
+		<label for="wzry">王者荣耀</label>
+		
+		<input type="checkbox" name="hobby" value="study" id="study">
+		<label for="study">学习</label>
+		
+		<!-- 下拉选 -->
+		<br>城市：<select name="city">
+			<option>请选择</option>
+			<option value="bj" selected="selected">北京</option>
+			<option value="sh">上海</option>
+			<option value="sz">深圳</option>
+		</select>
+		
+		<!-- 时间选择器 -->
+		<br>生日：<input type="date" name="birthday">
+		
+		<!-- 文件选择 -->
+		<br>文件:<input type="file" name="pic">
+		
+		<!-- 文本域 -->
+		<br><textarea rows="3" cols="20" name="text">斯人若彩虹，遇上方知有</textarea>
+		
+		<!-- 隐藏域 -->
+		<input type="hidden" name="userid" value="1293438593">
+		
+		<hr>
+		<!-- 重置按钮 -->
+		<input type="reset" value="reset">
+		
+		<!-- 自定义按钮 -->
+		<input type="button" value="自定义按钮">
+		
+		<!-- 提交按钮  不用自定义value就出现名字 -->
+		<br><input type="submit" value="登录">
+	</form>
+</body>
+</html>

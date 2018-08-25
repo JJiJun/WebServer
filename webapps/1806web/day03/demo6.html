@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>伪类选择器</title>
+<style type="text/css">
+input{
+	border: 1px solid #ddd;
+}
+/*伪类样式：设置输入框获得焦点时候的效果*/
+input:focus{
+	border: 1px solid blue;
+	background-color:yellow;
+}
+.btn{
+	border:2px outset #ddd;
+	background-color: #eee;
+	text-align: center;
+	cursor: pointer;
+	width: 100px;
+}
+.btn:active{
+	border:2px inset #ddd;
+}
+</style>
+</head>
+<body>
+	<h1>伪类选择器2</h1>
+	<h2>表单</h2>
+	<div>
+		<label>用户</label>
+		<input type="text">
+	</div>
+	
+	<div>
+		<label>电话</label>
+		<input type="text">
+	</div>
+	
+	<div>
+		<label>年龄</label>
+		<input type="text">
+	</div>
+	
+	<div class="btn">按钮</div>
+</body>
+</html>
