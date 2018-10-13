@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background-color: black;
+	}
+	
+	div{
+		position: absolute;
+		color: green;
+		width: 5px;
+		height: 5px;
+	}
+</style>
+<script type="text/javascript">
+	var arr = ['a','b','c','d','e','f','g','h','i','j','k','i','m','n','o','p',
+		'q','r','s','t','u','v','w','x','y','z'];
+	var w,h;
+	onload = function(){
+		changeSize();
+	}
+	
+	
+	onresize = function(){
+		changeSize();
+	}
+	
+	
+	function changeSize(){
+		w = document.body.parentElement.clientWidth;
+		h = document.body.parentElement.clientHeight;
+		var html = document.getElementsByTagName("html")[0];
+		//document.body.parentElement.style.backgroundSize = x+"px "+y+"px";
+		html.style.backgroundSize = w+"px "+h+"px";
+	}
+	
+	
+	var t1 = setInterval(function() {
+		var div = document.createElement("div");
+		var size = Math.floor(Math.random()*2)+1;
+		var index = Math.floor(Math.random()*26);
+		div.innerHTML = "<h"+size+">"+arr[index]+"</h"+size+">";
+		document.body.appendChild(div);
+		div.style.left = Math.floor(Math.random()*w)+"px";
+		div.style.top = 0;
+	}, 1)
+	
+	setInterval(function() {
+		var divs = document.getElementsByTagName("div");
+		for(var i=0;i<divs.length;i++){
+			console.log(divs.length);
+			var div = divs[i];
+			var distance = parseInt(div.style.top);
+			distance += 5;
+	        if(distance>=h){
+	        	document.body.removeChild(div);
+			} 
+			div.style.top = distance+"px";
+		}
+	}, 20)
+</script>
+</head>
+<body>
+
+</body>
+</html>

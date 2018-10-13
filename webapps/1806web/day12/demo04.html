@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//添加到最后面
+		$("input:eq(1)").click(function(){
+			$("ul").append("<li>"+$("input:eq(0)").val()+"</li>")
+		}) 
+		//添加到最前面
+		/* $("input:eq(1)").click(function(){
+			$("ul").prepend("<li>"+$("input:eq(0)").val()+"</li>")
+		})
+		//插入到前面
+		$("input:eq(2)").click(function(){
+			$("#sh").before("<li>"+$("input:eq(0)").val()+"</li>")
+		})*/
+		//插入到后面
+		$("input:eq(2)").click(function(){
+			$("#sh").after("<li>"+$("input:eq(0)").val()+"</li>")
+		})
+		//删除
+		$("input:eq(3)").click(function(){
+			var str = $("input:[type='text']").val();
+			//$("li:contains('"+str+"')").remove();
+			
+			$("li").each(function(){
+				if(str==$(this).text()){
+					$(this).remove();
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<div >
+		<input type="text" id="ip">
+		<input type="button" value="添加">
+		<input type="button" value="插入">
+		<input type="button" value="删除">
+		<hr>
+		<ul>
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>广州</li>
+		</ul>
+	</div></body>
+</html>

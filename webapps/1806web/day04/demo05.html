@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>更改显示方式</title>
+<style type="text/css">
+.form{
+	border:1px solid #ddd;
+	border-radius: 4px;
+	width: 600px;
+	/*左右设置auto自动居中计算外边距！可以实现盒子模型的居中效果*/
+	margin:50px auto;
+	background-color: #ceaf45;
+	
+}
+.form h2{
+	/*盒子内部的文字居中显示，使用text-align*/
+	text-align: center;
+	/*设置文字反白效果：黑背景，白字*/
+	background-color:#803c3c;
+	color: #fff;
+	margin: 0px;
+	padding: 8px 0;
+}
+
+.form-field{
+	margin: 10px 8px;
+}
+.form-field input{
+	/*input是行内元素，可以直接设置宽度*/
+	width: 180px;
+}
+.form-field label{
+	/*设置元素的显示方式
+		inline:行内元素，不能设置宽高
+		inline-block:能够设置宽高
+		block:块元素，能够设置宽高
+	*/
+	display: inline-block;
+	width: 80px;
+}
+.button{
+	background-color: grey;
+	padding: 10px 0;
+	text-align: center;
+}
+.button input{
+	background-color: #00f;
+	border: 4px;
+	border-radius: 8px;
+	color: #fff;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1>更改显示方式</h1>
+	<form class="form" action="">
+		<h2>登录</h2>
+		<div class="form-field">
+			<label>用户名</label>
+			<input type="text">
+			<span>8~10个字母</span>
+		</div>
+		
+		<div class="form-field">
+			<label>密码</label>
+			<input type="password">
+			<span>8~10个数字和字母</span>
+		</div>
+		
+		<div class="button">
+			<input type="submit" value="登录">
+		</div>
+	</form>
+</body>
+</html>

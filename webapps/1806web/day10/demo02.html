@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+		setInterval(function() {
+			var dateNow = new Date();
+			time.innerText = dateNow.toLocaleTimeString();
+		}, 1000)
+		var timeId;
+		function mybtn(){
+			clearInterval(timeId);
+			var t = input.value*60;
+			timeId = setInterval(function() {
+				t-=0.1;
+				if(t<=0){
+					clearInterval(timeId);
+					time1.innerText = "时间到";
+					return;
+				}
+				time1.innerText = t.toFixed(1);
+			}, 100)	
+		}
+</script>
+</head>
+<body>
+	<h1 id="time"></h1>
+	<input type="text" placeholder="请输入倒计时时间" id="input">
+	<input type="button" value="开始" onclick="mybtn()">
+	<h1 id="time1"></h1>
+</body>
+</html>

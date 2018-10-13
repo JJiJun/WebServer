@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function split_char(){
+		var input_text = document.getElementById("input_text");
+		var split_op = document.getElementById("split_op").value;
+		var input_Text = input_text.value.split(split_op);
+		for(var i=1;i<=input_Text.length;i++){
+			if(i<=6){
+				document.body.innerHTML+="<h"+i+">"+input_Text[i-1]+"</h"+i+">"
+			}else{
+				document.body.innerHTML+="<h6>"+input_Text[i-1]+"</h6>"
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input_text">
+	<input type="text" id="split_op">
+	<input type="button" value="拆分" onclick="split_char()">
+</body>
+</html>

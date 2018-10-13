@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	border: 1px solid red;
+	width: 100px;
+	height: 100px;
+}
+#big{
+	position: relative;
+	width: 1000px;
+	height: 367px;
+	background-color: yellow;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+#d1{
+	/*相对定位：相对元素初始位置就是元素出现的位置,没有脱离文档流*/
+	/*position: relative;*/
+	/*绝对定位：*/
+	position: relative;
+}
+
+#d2{
+	/*相对定位：相对元素初始位置就是元素出现的位置,*/
+	position: absolute;
+}
+
+</style>
+</head>
+<body>
+	<div id="big">
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</div>
+</body>
+</html>

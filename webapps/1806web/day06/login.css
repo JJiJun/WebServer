@@ -1,0 +1,179 @@
+@CHARSET "UTF-8";
+body{
+	background-color: rgb(245,245,245);
+	/*body默认会自带上下左右的8个像素的外边距*/
+	margin: 0;/*去掉默认的外边距*/
+	font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+    font-size: 12px;
+}
+header{
+	width: 1000;
+	margin:0 auto;
+	overflow: hidden;
+	padding: 20px 50px 30px 50px;
+}
+header img,header h1{
+	float: left;
+}
+h1{
+	margin: 10px 0 0 24px;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+
+
+#form_div{
+	background-image: url("../images/regist.png");
+	width: 100%;
+	height: 560px;
+}
+#form_panel{
+	width: 264px;
+	/*
+		1.通过颜色单词设置
+		2.3位16进制设置 #0f0
+		3.6位16进制         #ffffff
+		4.10进制rgb(0-255,0-255,0-255)
+		5.10进制rgba(0-255,0-255,0-255,0-1)     a:alpha透明度      
+	*/
+	background-color: rgba(0,0,0,0.3);
+	float: right;
+	margin: 120px 111px 0 0;
+	padding: 8px;
+	color: white;
+}
+#form_panel h2{
+	margin: 0;
+	padding: 8px;
+	border-bottom: 1px solid white;
+}
+#form_panel h2 a{
+	text-decoration: none;
+	color: white;
+	font-size: 12px;
+	float:right;
+	margin-top: 5px;
+}
+.field{
+	margin: 10px 0;
+	/*为图片做位置参考*/
+	position: relative;
+}
+.field img{
+	position: absolute;
+	right: 10px;
+	top: 4px
+}
+.field input{
+	padding: 10px 20px;
+	width: 224px;
+	border: 0;
+	margin-bottom: 5px;
+}
+.field span {
+    color: red;
+    position: relative;
+    top: 5px;
+}
+#checkbox_div label{
+	position: relative;
+	bottom: 3px;
+}
+#checkbox_div a{
+	color: white;
+	text-decoration: none;
+	float: right;
+}
+#form_panel #loginbtn{
+	margin: 10px 0;
+	width: 264px;
+    background-color: #27b0f6;
+    border: 0px;
+    color: white;
+    height: 35px;
+    border-radius: 4px;
+}
+
+
+
+
+#service_div{
+	width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+    overflow: hidden;
+}
+#service_div div{
+	float: left;
+	width: 250px;
+	text-align: center;
+}
+#service_div div a{
+	text-align: center;
+	color: #666;
+	text-decoration: none;
+	display: block;
+}
+
+
+
+
+
+footer{
+	width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+footer>div{
+	float: left;
+	width: 333px;
+	text-align: center;
+}
+#left_div img{
+	margin-left: 20px;
+	display: block;
+}
+ul{
+	margin: 0px;
+	list-style-type: none;
+	padding: 0px;/*去掉默认的内边距*/
+}
+#center_div a{
+	text-align: center;
+	text-decoration: none;
+	color: #666;
+}
+#center_div>ul>li>ul>li{
+	font-weight: normal;/*去掉继承的字体加粗*/
+	margin: 8px 0;
+}
+#center_div>ul>li{
+	font-size: 10px;
+	font-weight: bold;
+	width: 111px;
+	float: left;
+}
+#center_div img{
+	position: relative;
+}
+
+#right_div div{
+	width: 166px;
+	float: left;
+}
+#right_div div h3{
+	margin: 0;
+}
+#ewm{
+	position:relative;
+	left: -30px;
+	top: 10px;
+}
+footer p{
+	text-align: center;
+	font-size: 13px;
+	color: black;
+	clear: both;
+}

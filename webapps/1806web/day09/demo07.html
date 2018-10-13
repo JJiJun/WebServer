@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+</style>
+<script type="text/javascript">
+	var x = 0;
+	/* onclick = function(){
+		x+=10;
+		img.style.left = x+"px";
+	} */
+	/*定时器       两个参数 ：1.函数     2.时间间隔*/
+	setInterval(moveImg,10)
+	function moveImg(){
+		x+=1;
+		img.style.left = x+"px";
+	}
+	setInterval(function(){
+		x=0;
+	},5000);
+</script>
+</head>
+<body>
+	<img id="img" src="Caitlyn_0.jpg">
+</body>
+</html>

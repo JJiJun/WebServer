@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $("body>ul>li").children().hide();//刚显示就是隐藏
+		$("body>ul>li").click(function(){
+		//children得到元素的孩子，如果不写参数是得到所有，写参数指定类型
+			$(this).children().toggle();
+			$(this).siblings().children().hide();
+		}); */
+		
+		$("body>ul>li").click(function(){
+			var obj = this;
+			$("body>ul>li").each(function(){
+				if(this==obj){
+					$(this).children().toggle();
+				}else{
+					$(this).children().hide();
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<ul>
+		<li>美女好友
+			<ul>
+				<li>刘亦菲</li>
+				<li>赵丽颖</li>
+				<li>西施</li>
+				<li>貂蝉</li>
+			</ul>
+		</li>
+		<li>工作好友
+			<ul>
+				<li>马云</li>
+				<li>李彦宏</li>
+				<li>马化腾</li>
+			</ul>
+		</li>
+		<li>水果
+			<ul>
+				<li>苹果</li>
+				<li>橘子</li>
+				<li>香蕉</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<style type="text/css">
+
+	div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid red;
+	}	
+	
+	#h{
+		color: blue;
+	}
+</style>
+<script type="text/javascript">
+
+	function stylefn(){
+		//一次性赋值多个样式
+		$("div").css({"background-color":"red","color":"yellow"});
+		
+		//取出元素的宽度
+		alert("宽度"+$("div").css("width"));
+	}
+	
+	function attributefn(){
+		//给属性赋值
+		$("h1").attr("id","h");
+		//取出属性的值
+		alert($("h1").attr("id"));
+	}
+	
+	function textfn(){
+		//
+		$("div").text("刘国斌老师");
+		alert($("div").text());
+		
+	}
+	
+	function htmlfn(){
+		$("div").html("<h3>aaa</h3>");
+		alert($("div").html());
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="改变样式" onclick="stylefn()">
+	<input type="button" value="改变属性" onclick="attributefn()">
+	<input type="button" value="设置文本" onclick="textfn()">
+	<input type="button" value="设置html" onclick="htmlfn()">
+	<div>我是div</div>
+	<h1>今天web前端最后一天</h1>
+</body>
+</html>

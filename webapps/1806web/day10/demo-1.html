@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮流切换图片</title>
+		<style type="text/css">
+			img {
+				width: 320px;
+				height: 180px;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			var count = 0;
+			onload = function(){
+				//得到第一张图片让其显示
+				var imgs = document.getElementsByTagName("img");
+				imgs[0].style.display = "inline-block";
+			}
+			
+			//开启每1秒执行一次的定时器
+			setInterval(function(){
+				//得到所有图片
+				var imgs = document.getElementsByTagName("img");
+				count++;
+				//得到需要显示的图片下标
+				var visibleIndex = count%imgs.length;
+				for(var i = 0; i < imgs.length; i++){
+					var img = imgs[i];
+					if(i == visibleIndex){
+						//显示
+						img.style.display = "inline-block";
+					}else{
+						//隐藏
+						img.style.display = "none";
+					}
+				}
+			}, 1000);
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="1.jpg">
+			<img src="2.png">
+			<img src="3.png">
+			<img src="4.jpg">
+			<img src="5.png">
+		</div>
+	</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮流切换图片</title>
+		<style type="text/css">
+			div{
+				width: 320px;
+				height: 180px;
+				margin: 0 auto;
+				border: 1px solid red;
+			}
+			img{
+				width: 320px;
+				height: 180px;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			var count = 0;
+			onload = function(){
+				var imgs = document.getElementsByTagName("img");
+				imgs[0].style.display = "inline-block";
+			}
+			setInterval(function() {
+				count+=2;				
+				var imgs = document.getElementsByTagName("img");
+				var indexImg = count%imgs.length;
+				for(var i=0; i<imgs.length;i++){
+					if(i == indexImg){
+						imgs[i].style.display = "inline-block";
+					}else{
+						imgs[i].style.display = "none";
+					}
+				}
+			}, 1000);
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="1.jpg">
+			<img src="2.png">
+			<img src="3.png">
+			<img src="4.jpg">
+			<img src="5.png">
+			<p>不用考虑图片的起始位置。一定会在div里面显示</p>
+		</div>
+	</body>		
+</html>

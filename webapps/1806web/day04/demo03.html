@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>背景演示</title>
+<style type="text/css">
+.b1{
+	width: 800px;
+	height: 800px;
+	border: 1px solid #00f;
+	background-image: url(airplane0.png);
+	background-repeat:no-repeat;
+	/*设置相对位置贴图：center,top,left,right,*/
+	background-position: top center;
+}
+.btn{
+	width: 20px;
+	height: 16px;
+	border: 0px;
+	padding: 0px;
+	background-image: url("btn.png");
+	background-color: #fff;
+}
+.btn:hover {
+	/*绝对位置偏贴图*/
+	background-position: -30px 0px;
+}
+</style>
+
+</head>
+<body>
+	<button class="btn"></button>
+	<div class="b1"></div>
+</body>
+</html>

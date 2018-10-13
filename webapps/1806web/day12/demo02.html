@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>引入JQuery</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	/* onload = function(){
+		
+	} */
+	//复杂版
+	/* $(document).ready(function(){}) */
+	//简单版
+	$(function(){
+		$("#mybtn").click(function(){
+			alert("绑定成功")
+		})
+	})
+	
+</script>
+</head>
+<body>
+	<input type="button" id="mybtn" value="点我试试!">
+</body>
+</html>

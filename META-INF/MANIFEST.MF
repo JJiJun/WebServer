@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: WebServer_v18
+Bundle-SymbolicName: WebServer_v18
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.webserver.core,
+ com.webserver.demo,
+ com.webserver.http,
+ com.webserver.servlets

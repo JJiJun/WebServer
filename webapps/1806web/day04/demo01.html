@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>盒子模型</title>
+<style type="text/css">
+.demo{
+	background-color :green;/*背景绘制在内边距之内，外边距范围不绘制背景*/
+	height: 100px;/* 设定内容区域的宽*/
+	width: 80px;/* 设定内容区域的高*/
+	padding: 20px;/*设定内边距，内容与盒子边界的缝隙*/
+	border: 3px dashed #ddd;/*设定边框，盒子皮的厚度*/
+	
+}
+
+#box{
+	margin: 8px; /*盒子与盒子之间的距离*/
+	
+}
+
+#box2{
+	margin: 18px; /*盒子与盒子之间的距离对四个边同时设置*/
+	margin-left: 8px/*设置单个边*/
+	/*在单行上设置上，左，下，右 属性
+	margin:8px 8px 18px 20px;
+	*/
+}
+
+</style>
+</head>
+<body>
+	<h1>盒子模型</h1>
+	<div id="box" class="demo">
+		苍老师跟范传奇天天互吹
+	</div>
+	
+	<div id="box2" class="demo">
+		盒子外边距相互侵占
+	
+	</div>
+</body>
+</html>

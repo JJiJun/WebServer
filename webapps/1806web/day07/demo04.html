@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function jisuanqi(op){
+		var input1 = document.getElementById("input1");
+		var input2 = document.getElementById("input2");
+		var div = document.getElementById("d1");
+		if(!isNaN(input1.value)&&!isNaN(input2.value)&&input1.value!=""&&input2.value!=""){
+			if(op=="+"){
+				div.innerText=parseFloat(input1.value)+parseFloat(input2.value);
+			}
+			if(op=="-"){
+				div.innerText=parseFloat(input1.value)-parseFloat(input2.value);
+			}
+			if(op=="*"){
+				div.innerText=parseFloat(input1.value)*parseFloat(input2.value);
+			}
+			if(op=="/"){
+				div.innerText=parseFloat(input1.value)/parseFloat(input2.value);
+			}
+		}else{
+			alert("输入不合法，请重新输入！")
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input1">
+	<input type="text" id="input2"><br>
+	<input type="button" value="+" onclick="jisuanqi('+')">
+	<input type="button" value="-" onclick="jisuanqi('-')">
+	<input type="button" value="*" onclick="jisuanqi('*')">
+	<input type="button" value="/" onclick="jisuanqi('/')">
+	<div id="d1"></div>
+</body>
+</html>

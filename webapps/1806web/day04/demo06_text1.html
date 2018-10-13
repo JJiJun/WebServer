@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>浮动定位</title>
+<style type="text/css">
+div{
+	border: 1px solid #00f;
+}
+.root{
+	width: 300px;
+}
+.d1,.d2,.d3{
+	height: 50px;
+	width: 80px;
+}
+.d1{
+	float: right;
+}
+.d2{
+	float: right;
+}
+.d3{
+	float: right;
+}
+
+.article img{
+	float: right; /*没有float时跟图片同高的地方只有一行字，如果有float则是充满的*/
+	border: 1px solid #ddd;
+	background-color: #eee;
+	padding: 6px;
+	margin: 8px;
+}
+.artical{
+	text-indent: 2em;
+	line-height: 1.6em;
+}
+</style>
+</head>
+<body>
+	<h1>浮动定位</h1>
+	<div class="root">
+	root root root root root root root root root root root root root root root 
+	root root root root root root root root root root root 
+		<div class="d1">d1</div>
+		<div class="d2">d2</div>
+		<div class="d3">d3</div>
+	</div>
+	
+	<h2>浮动定位的应用</h2>
+	<p class="article">
+		<img src="airplane0.png" height="100" width="100">
+		JSP 与 PHP、ASP、ASP.NET 等语言类似，运行在服务端的语言。
+		JSP（全称Java Server Pages）是由 Sun Microsystems 
+		公司倡导和许多公司参与共同创建的一种使软件开发者可以响应客户端请求，
+		而动态生成 HTML、XML 或其他格式文档的Web网页的技术标准。
+		JSP 技术是以 Java 语言作为脚本语言的，JSP 网页为整个服务器端的
+		 Java 库单元提供了一个接口来服务于HTTP的应用程序
+	</p>
+</body>
+</html>

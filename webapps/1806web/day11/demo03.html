@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>背景图片随窗口大小改变</title>
+<style type="text/css">
+	html{
+		background-image: url("../day10/1.jpg");
+		background-repeat: no-repeat;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		changeSize();
+	} 
+	onresize = function(){
+		changeSize();
+	}
+	function changeSize(){
+		var x = document.body.parentElement.clientWidth;
+		var y = document.body.parentElement.clientHeight;
+		var html = document.getElementsByTagName("html")[0];
+		//document.body.parentElement.style.backgroundSize = x+"px "+y+"px";
+		html.style.backgroundSize = x+"px "+y+"px";
+	}
+	function downfn(){
+		console.log(String.fromCharCode(event.keyCode));
+	}
+	
+	function upfn(){
+		//获取键盘按键对应的十进制数值
+		console.log(String.fromCharCode(event.keyCode));
+		if(event.keyCode==13){
+			alert("登录成功!");
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" onkeydown="downfn()" onkeyup="upfn()">
+</body>
+</html>

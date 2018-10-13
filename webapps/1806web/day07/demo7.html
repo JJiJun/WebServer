@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#d1{
+		width: 300px;
+	}
+	.red{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		float: left;
+	}
+	.yellow{
+		width: 100px;
+		height: 100px;
+		background-color: yellow;
+		float: left;
+	}
+</style>
+<script type="text/javascript">
+	function fn1() {
+		var div = document.getElementById("d1");
+		for(var i=1; i<=9; i++){
+			if(i%2==1){
+				div.innerHTML+="<div class='red'></div>";
+			}else if(i%2==0){
+				div.innerHTML+="<div class='yellow'></div>";
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<input type="button" value="添加" onclick="fn1()">
+	<div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//创建正则的两种方式
+	//1.通过//的形式创建，第一个/是正则的规则，第二个/代表模式.模式包括：i代表忽略大小写，g代表全局查找
+	var reg1 = /^a/i;//以a开头忽略大小写
+	var reg2 = /m$/;//以m结尾
+	var reg3 = /^m\d{3,5}c$/;//以m开头，d结尾中间有3到5个数字
+	var reg4 = /^\w{6,10}$/
+	//2.第二种创建正则的方式 第一个参数是规则，第二个参数是模式
+	var reg5 = new RegExp("^a", "i");//第二个参数模式可以省略
+	var reg6 = new RegExp("^\\w{6,10}");//反斜杠需要转义
+	//正则相关函数
+	//1，查找内容
+	var str = "you can you up, no can no b b";
+	var reg = /no/g;
+	/* alert(reg.exec(str));
+	alert(reg.exec(str));
+	alert(reg.exec(str)); */
+	//2.校验文本
+	/* reg = /^you/;
+	alert(reg.test(str)); */
+	//和字符串相关的正则函数
+	//1.查找内容    当模式为g全局查找时会一次性得到所有内容，返回值为一个数组
+	//alert(str.match(reg));
+	//2.查找并替换
+	alert(str.replace(reg,"bu"));
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

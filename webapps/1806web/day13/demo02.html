@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	var arr = [["朝阳","海淀","大兴"],
+		["阜阳","淮北","淮南"],
+		["南京","苏州","淮安"],];
+	function changefn(){
+		$("select:last").html("<option>请选择</option>");
+		
+		var citys = arr[$("select:first").val()];
+		for(var i=0; i<citys.length; i++){
+			var op = $("<option></option>");
+			op.text(citys[i]);
+			$("select:last").append(op);		
+		}
+	}
+</script>
+</head>
+<body>
+	<select onchange="changefn()">
+		<option>请选择</option>
+		<option value="0">北京</option>
+		<option value="1">安徽</option>
+		<option value="2">江苏</option>
+	</select>
+	<select id="s2">
+		<option>请选择</option>
+	</select>
+</body>
+</html>

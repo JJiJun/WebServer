@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.ok{
+		color: green;
+	}
+	.erro{
+		color: red;
+	}
+</style>
+<script type="text/javascript">
+	function check(){
+		var user_name = username.value;
+		var pass_word = password.value;
+		var reg = /^\w{6,10}$/;
+		if(reg.test(user_name)){
+			s1.className="ok";
+		}else{
+			s1.className="erro";
+		}
+		if(reg.test(pass_word)){
+			s2.className="ok";
+		}else{
+			s2.className="erro";
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" placeholder="用户名" id="username">
+	<span id="s1">请输入6-10位字母下划线</span><br>
+	<input type="text" placeholder="密码" id="password">
+	<span id="s2">请输入6-10位字母下划线</span><br>
+	<input type="button" value="校验" onclick="check()">
+</body>
+</html>

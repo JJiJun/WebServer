@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function add(){
+		var add_city = ip.value;
+		var li = document.createElement("li");
+		li.innerText = add_city;
+		var ul = document.getElementsByTagName("ul")[0];
+		ul.appendChild(li);
+	}
+	function aler(){
+		var add_city = ip.value;
+		var li = document.createElement("li");
+		li.innerText = add_city;
+		var ul = document.getElementsByTagName("ul")[0];
+		ul.insertBefore(li, sh);
+	}
+</script>
+</head>
+<body>
+	<div >
+		<input type="text" id="ip">
+		<input type="button" value="添加" onclick="add()">
+		<input type="button" value="插入" onclick="aler()">
+		<hr>
+		<ul>
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>广州</li>
+		</ul>
+	</div>
+</body>
+</html>

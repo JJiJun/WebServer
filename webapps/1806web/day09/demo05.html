@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*给窗口添加点击事件*/
+	window.onclick = function(){
+		//alert(ip1.value);
+	}
+	//alert(ip1.value);   这样不行，因为从上往下加载，此时value里面为null，报错。如果需要页面加载完成做某事，需要把代码下载onload里面
+	/*给窗口添加加载完成事件*/
+	onload = function(){
+		//alert(ip1.value);
+	}
+	
+	//给窗口添加获取焦点事件
+	onfocus = function(){
+		console.log("欢迎");
+	}
+	
+	onblur = function(){
+		console.log("慢走");
+	}
+	
+</script>
+</head>
+<body>
+	<input type="text" id="ip1" value="周一好困">
+</body>
+</html>

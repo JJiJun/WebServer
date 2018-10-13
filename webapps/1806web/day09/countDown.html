@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>倒计时</title>
+		<script type="text/javascript">
+			function countDown(eventDate){
+				var dateNow = new Date();
+				var dateStr = eventDate.split("-");
+				var datePre = new Date(dateStr[0],dateStr[1]-1,dateStr[2]);
+				var datetime = 24*60*60*1000;
+				var days = (datePre.getTime()-dateNow.getTime())/datetime;
+				days = Math.floor(days)+1;
+				if(days>0){
+					show.innerHTML = "到新年还有"+days+"天";
+				}else if(days==0){
+					show.innerHTML = "今天是新年";
+				}else{
+					show.innerHTML = "今天是新年的第"+days+"天";
+				}
+				setTimeout('countDown("2018-09-02")',datetime);
+			}
+		</script>
+	</head>
+	<body onload="countDown('2018-09-02')">
+		<div id="show"></div>
+	</body>
+</html>

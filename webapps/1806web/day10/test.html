@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	#display{
+		position: relative;
+		width: 1600px;
+		height: 180px;
+		margin: 0 auto;
+		overflow: hidden;
+		border: 1px solid red;
+	}
+	ul{
+		left: 0;
+		position: absolute;
+		list-style-type: none;
+	}
+	ul li{
+		width: 320px;
+		height: 180px;
+		float: left;
+	}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var oLi = document.getElementsByTagName('li');
+		oUl.innerHTML = oUl.innerHTML+oUl.innerHTML;
+		oUl.style.width = oLi[0].offsetWidth*oLi.length+"px";
+		setInterval(function() {
+			if(oUl.offsetLeft<-oUl.offsetWidth/2){
+				oUl.style.left = '0';
+			}
+			oUl.style.left = oUl.offsetLeft-2+"px";
+		}, 10)
+	}
+</script>
+</head>
+<body>
+	<div id="display">
+		<ul id="oUl">
+			<li><img src="1.jpg"></li>
+			<li><img src="2.png"></li>
+			<li><img src="3.png"></li>
+			<li><img src="4.jpg"></li>
+			<li><img src="5.png"></li>
+		</ul>
+	</div>
+</body>
+</html>

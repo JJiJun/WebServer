@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.in{
+		display: block;
+		float: left;
+		padding: 0;
+		margin:4px 2px;
+		border: 2px solid gray;
+		border-radius: 4px;
+		width: 50px;
+		height: 54px;
+	}
+	#d1{
+		margin:0 auto;
+		width: 216px;
+		border: 2px solid gray;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	#p1{
+		margin:4px 2px;
+		float: left;
+		padding: 0;
+		border: 2px solid gray;
+		border-radius: 4px;
+		width: 154px;
+		height: 50px;
+		line-height: 50px;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(str){
+		var num = ['0','1','2','3','4','5','6','7','8','9'];
+		if(num.includes(str)){
+			str = parseInt(str);
+		}
+		if(str=='C'){
+			p1.innerText='';
+		}else if(str=='='){
+			p1.innerText = eval(p1.innerText)
+		}else{
+			//取出当前p标签文本最后一位字符
+			var last = p1.innerText.substring(p1.innerText.length-1);
+			if(last=='+'||last=='-'||last=='*'||last=='/'){
+				if(str=='+'||str=='-'||str=='*'||str=='/'){
+					return;
+				}
+			}
+			p1.innerText+=str;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<div id="d1">
+		<p id="p1"></p> 
+		<input type="button" value="C" class="in" onclick="myfn('C')">
+		<input type="button" value="7" class="in" onclick="myfn('7')">
+		<input type="button" value="8" class="in" onclick="myfn('8')">
+		<input type="button" value="9" class="in" onclick="myfn('9')">
+		<input type="button" value="/" class="in" onclick="myfn('/')">
+		<input type="button" value="4" class="in" onclick="myfn('4')">
+		<input type="button" value="5" class="in" onclick="myfn('5')">
+		<input type="button" value="6" class="in" onclick="myfn('6')">
+		<input type="button" value="*" class="in" onclick="myfn('*')">
+		<input type="button" value="1" class="in" onclick="myfn('1')">
+		<input type="button" value="2" class="in" onclick="myfn('2')">
+		<input type="button" value="3" class="in" onclick="myfn('3')">
+		<input type="button" value="-" class="in" onclick="myfn('-')">
+		<input type="button" value="0" class="in" onclick="myfn('0')">
+		<input type="button" value="." class="in" onclick="myfn('.')">
+		<input type="button" value="=" class="in" onclick="myfn('=')">
+		<input type="button" value="+" class="in" onclick="myfn('+')">
+	</div>
+</body>
+</html>

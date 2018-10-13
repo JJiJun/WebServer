@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.red{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+	.yellow{
+		width: 100px;
+		height: 100px;
+		background-color: yellow;
+	}
+	.blue{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+
+</style>
+<script type="text/javascript">
+	function fn1(color) {
+		document.body.innerHTML+="<div class='"+color+"'></div>"
+	}
+	
+</script>
+</head>
+<body>
+	<input type="text" id="input">
+	<input type="button" value="红" onclick="fn1('red')">
+	<input type="button" value="黄" onclick="fn1('yellow')">
+	<input type="button" value="蓝" onclick="fn1('blue')">
+</body>
+</html>

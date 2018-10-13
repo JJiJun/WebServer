@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 320px;
+		height: 180px;
+		position: absolete;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	function fn1(){
+		$("img").hide(3000,function(){
+			$("img").show(2000);
+		});
+	}
+	
+	
+	function fn2(){
+		$("img").show(3000);
+	}
+	
+	
+	function fn3(){
+		$("img").slideUp(3000);
+	}
+	
+	
+	function fn4(){
+		$("img").slideDown(3000);
+	}
+	
+	function fn5(){
+		$("img").fadeOut(3000);
+	}
+	
+	
+	function fn6(){
+		$("img").fadeIn(3000);
+	}
+	
+	function fn7(){
+		$("img").animate({"left":"250px"},1000)
+		.animate({"top":"250px"},1000)
+		.animate({"left":"0px"},1000)
+		.animate({"top":"0px"},1000).fadeOut(2000);
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="隐藏" onclick="fn1()">
+	<input type="button" value="显示" onclick="fn2()">
+	<input type="button" value="上滑" onclick="fn3()">
+	<input type="button" value="下滑" onclick="fn4()">
+	<input type="button" value="淡入" onclick="fn5()">
+	<input type="button" value="淡出" onclick="fn6()">
+	<input type="button" value="自定义" onclick="fn7()">
+	<hr>
+	<img src="../day10/1.jpg">
+</body>
+</html>

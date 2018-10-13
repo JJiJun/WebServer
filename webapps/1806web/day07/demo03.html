@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function jisuan(){
+		var myput = document.getElementById("myput");
+		if(!isNaN(myput.value)){
+			document.getElementById("d1").innerText=(myput.value)*(myput.value);
+		}else{
+			alert("输入不合法");
+			myput.focus();
+			return;
+		}
+		
+	}
+
+</script>
+<body>
+	<input type="text" id="myput">
+	<input type="button" value="平方" onclick="jisuan()">
+	<div id="d1">姜继军jiang</div>
+</body>
+</html>

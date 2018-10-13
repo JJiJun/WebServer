@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#display{
+		width: 975px;
+		height: 334px;
+		margin: 0 auto;
+		overflow: hidden;
+		border: 1px solid red;
+		position: relative;
+	}
+	#display:hover .arrow{
+		display: block;
+	}
+	#imgList{
+		left: 0;
+		width: 4875px;
+		height: 334px;
+		position: absolute;
+	}
+	img{
+		width: 975px;
+		height: 334px;
+		float: left; 
+	}
+	.arrow {
+		display: none;
+		position:absolute;
+		top: 137px;
+		z-index: 2;
+		width: 30px;
+		height: 50px;
+		font-size: 40px;
+		line-height: 50px;
+		text-align: center;
+		color: #fff;
+		background-color: RGBA(0, 0, 0, 0.3);
+		cursor: pointer;
+	}
+	.arrow:HOVER{
+		background-color: RGBA(0, 0, 0, 0.8);
+	}
+	#prev{
+		left: 0;
+	}
+	#next{
+		right: 0;
+	}
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var timer = null;
+	function change(){
+	 	if(imgList.offsetLeft<=-3900) {
+			imgList.style.left = 0 + 'px';
+		} else {
+			imgList.style.left = imgList.offsetLeft - 975 + 'px';
+		}
+	}
+	timer = setInterval(change,2000);
+	console.log(timer);
+}
+</script>
+</head>
+<body>
+	<div id="display">
+		<div id="imgList">
+			<img src="1.png">
+			<img src="2.png">
+			<img src="3.jpg">
+			<img src="4.png">
+			<img src="5.png">
+		</div>
+		<a id="prev" class="arrow" onclick="changeImg(1200);">&lt;</a>
+		<a id="next" class="arrow" onclick="changeImg(-1200);">&gt;</a>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		margin: 0 auto;
+		width: 320px;
+		height: 180px;
+		position: relative;
+		overflow: hidden;
+	}
+	img{
+		width: 320px;
+		height: 180px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0; i<imgs.length; i++){
+			img = imgs[i];
+			img.style.left = 320*i + "px";
+		}
+	}
+	beginfn();
+	
+	var timeId;
+	
+	function stopfn(){
+		clearInterval(timeId);
+	}
+	
+	
+	function beginfn(){
+		//为了避免开启两次定时器在每次开始之前关闭一下
+		clearInterval(timeId);
+		timeId = setInterval(move,3000);
+	}
+	//页面失去焦点
+	onblur = function(){
+		stopfn();
+	}
+	//页面获取焦点
+	onfocus = function(){
+		beginfn();
+	}
+	function move(){
+		var moveId = setInterval(function() {
+			var imgs = document.getElementsByTagName("img");
+			for(var i=0; i<imgs.length; i++){
+				var img = imgs[i];
+				var oldLeft = parseInt(img.style.left);
+				oldLeft-=2;
+				if(oldLeft<=-320){
+					oldLeft=(imgs.length-1)*320;
+					clearInterval(moveId);
+				}
+				img.style.left = oldLeft+"px";
+			}
+		}, 10)
+	}
+	
+</script>
+</head>
+<body>
+	<div onmouseover="stopfn()" onmouseout="beginfn()">
+		<img src="1.jpg">
+		<img src="2.png">
+		<img src="3.png">
+		<img src="4.jpg">
+	</div>
+</body>
+</html>

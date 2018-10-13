@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>僵尸小游戏</title>
+<style type="text/css">
+	html{
+		background-image: url("PVZBackground_3.jpg");
+		background-repeat: no-repeat;
+	}
+	img{
+		position: absolute;
+		width: 83px;
+		height: 72px;
+	}
+	#sh3{
+		float: left;
+	}
+	#fh3{
+		float: right;
+	}
+</style>
+<script type="text/javascript">
+	var fail = 0;
+	var success = 0;
+	var x,y;
+	var imgs;
+	onload = function(){
+		changeSize();
+	}
+	
+	onresize = function(){
+		changeSize();
+	}
+	function changeSize(){
+		x = document.body.parentElement.clientWidth;
+		y = document.body.parentElement.clientHeight;
+		var html = document.getElementsByTagName("html")[0];
+		//document.body.parentElement.style.backgroundSize = x+"px "+y+"px";
+		html.style.backgroundSize = x+"px "+y+"px";
+	}
+	
+	//开启定时器
+	var t1 = setInterval(function() {
+		var img = document.createElement("img");
+		img.src = "zomb"+parseInt(Math.random()*4)+".png";
+		document.body.appendChild(img);
+		var top = Math.floor(Math.random()*(y-83));
+		img.style.left = x+"px";
+		img.style.top = top+"px";
+		img.onmouseover = function(){
+			document.body.removeChild(img);
+			success++;
+			sh3.innerText="成功次数: "+success;
+		}	
+	}, 1000)
+	
+	setInterval(function() {
+		imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			img = imgs[i];
+			var distance = parseInt(img.style.left);
+			distance -= 5;
+	        if(distance<=0){
+	        	fail++;
+	        	fh3.innerText="失败次数: "+fail;
+				img.remove();
+			} 
+			img.style.left = distance+"px";
+		}
+	}, 100)
+</script>
+</head>
+<body>
+	<h3 id="fh3">失败次数: 0</h3>
+	<h3 id="sh3">成功次数: 0</h3>
+</body>
+</html>

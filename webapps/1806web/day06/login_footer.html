@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	background-color: rgb(245,245,245);
+	/*body默认会自带上下左右的8个像素的外边距*/
+	margin: 0;/*去掉默认的外边距*/
+	font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+    font-size: 12px;
+}
+
+footer{
+	width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+footer>div{
+	float: left;
+	width: 333px;
+	text-align: center;
+}
+#left_div img{
+	margin-left: 20px;
+	display: block;
+}
+ul{
+	margin: 0px;
+	list-style-type: none;
+	padding: 0px;/*去掉默认的内边距*/
+}
+#center_div a{
+	text-align: center;
+	text-decoration: none;
+	color: #666;
+}
+#center_div>ul>li>ul>li{
+	font-weight: normal;/*去掉继承的字体加粗*/
+	margin: 8px 0;
+}
+#center_div>ul>li{
+	font-size: 10px;
+	font-weight: bold;
+	width: 111px;
+	float: left;
+}
+#center_div img{
+	position: relative;
+}
+
+#right_div div{
+	width: 166px;
+	float: left;
+}
+
+#ewm{
+	position:relative;
+	left: -30px;
+	top: 20px;
+}
+footer p{
+	text-align: center;
+	font-size: 13px;
+	color: black;
+}
+</style>
+</head>
+<body>
+	<footer>
+		<div id="left_div">
+			<img alt="" src="../images/footer/logo.png">
+			<img alt="" src="../images/footer/footerFont.png">
+		</div>
+		<div id="center_div">
+			<ul>
+				<li><a href="#">买家帮助</a>
+					<ul>
+						<li><a href="#">新手指南</a></li>
+						<li><a href="#">服务保障</a></li>
+						<li><a href="#">常见问题</a></li>
+					</ul>
+				</li>
+				<li><a href="#">商家帮助</a>
+					<ul>
+						<li><a href="#">商家入驻</a></li>
+						<li><a href="#">商家后台</a></li>
+					</ul>
+				</li>
+				<li><a href="#">关于我们</a>
+					<ul>
+						<li><a href="#">关于达内</a></li>
+						<li><a href="#">联系我们</a></li>
+						<li><a href="#"><img alt="" src="../images/footer/sinablog.png">
+							<img alt="" src="../images/footer/wechat.png"></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="right_div">
+			<div>
+				<h3>学子商城客户端</h3>
+				<img src="../images/footer/ios.png">
+				<img src="../images/footer/android.png">
+			</div>
+			<div>
+				<img id="ewm" src="../images/footer/erweima.png">
+			</div>
+		</div>
+		<p>©2017 达内集团有限公司 版权所有 京ICP证xxxxxxxxxxx</p>
+	</footer>
+</body>
+</html>

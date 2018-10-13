@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#mybtn1").click(function(){
+			var input = $("#myinput");
+			alert(input.val());
+			var jsObj = input[0];
+			//jsObj = input.get[0];
+			alert(jsObj.value);
+		})
+		$("#mybtn2").click(function(){
+			var input = document.getElementById("myinput");
+			alert(input.value);
+			var jqObj = $(input);
+			alert(jqObj.val());
+		});
+	})
+	
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" id="mybtn1" value="jq转js">
+	<input type="button" id="mybtn2" value="js转jq">
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre id="aa"></pre>
+<div style="display:none" id="w">
+</div>
+<script type="text/javascript">
+    var index=0;
+    var word=document.getElementById("w").innerHTML;
+    function type(){
+        document.getElementById("aa").innerText = word.substring(0,index++);
+    }
+    setInterval(type, 200);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#big{
+	width: 300px;
+	border: 1px solid red;
+	/*如果所有子元素全部浮动，则自动识别的高度为0通过以下代码解决问题
+		元素脱离文档流就没有高度了所以大的div高度为零
+	*/
+	overflow: hidden;
+}
+
+#d1,#d2{
+	width: 100px;
+	height: 100px;
+	border: 1px solid blue;
+	float: left;
+}
+li{
+	float:left;
+	width: 150px;
+}
+ul{
+	list-style-type: none;
+}
+</style>
+</head>
+<body>
+	<div id="big">
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</div>
+	
+	<ul>
+		<li>克晶老师</li>
+		<li>传奇老师</li>
+		<li>苍老师</li>
+		<li>刘老师</li>
+	</ul>
+</body>
+</html>

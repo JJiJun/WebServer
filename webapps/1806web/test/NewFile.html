@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>网页换肤</title>
+<script type="text/javascript">
+function writeCookie(csspath){
+	var today = new Date();
+	var expires = new Date();
+	expires.setTime(today.getTime() + 1000*60*60*24*30); 
+	var str="cssPath="+csspath+";expires=" + expires.toGMTString()+";" ;
+	alert(str)
+	document.cookie=str;
+}
+function ifCookie(){
+	if(readCookie("cssPath")==undefined){
+		writeCookie("green");
+	}
+	document.getElementById("myCss").href=readCookie("cssPath");
+}
+function readCookie(cookieName){
+	var search = cookieName + "=";
+	if (document.cookie.length > 0) {
+		offset = document.cookie.indexOf(search);
+		if (offset != -1) {
+			offset += search.length;
+			end = document.cookie.indexOf(";", offset);
+			if (end == -1){
+				end = document.cookie.length;
+				return unescape(document.cookie.substring(offset, end));
+			}
+		}
+	}
+}
+function change(type){
+	var a = document.getElementById("bg");
+	if(type=="orange"){
+		a.style="background-color: orange"
+		writeCookie("orange");
+	}
+	if(type=="gray"){
+		a.style="background-color: gray"
+		writeCookie("gray");
+	}
+}
+</script>
+</head>
+<body id="bg" onLoad=ifCookie()>
+	<button id="orange" onclick="change('orange')">[橘色经典]</button>
+	<button id="gray" onclick="change('gray')">[灰色畅想]</button>
+</body>
+</html>

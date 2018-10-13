@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		var str = "";
+		var hobbys = document.getElementsByName("hobby");
+		for(var i=0; i<hobbys.length; i++){
+			var h = hobbys[i];
+			if(h.checked){
+				str+=h.value;
+			}
+		}
+		var h1 = document.createElement("h1");
+		h1.innerText = str;
+		document.body.appendChild(h1);
+	}
+</script>
+</head>
+<body>
+	<input type="checkbox" name="hobby" value="lq">篮球
+	<input type="checkbox" name="hobby" value="cg">唱歌
+	<input type="checkbox" name="hobby" value="wz">王者
+	<input type="checkbox" name="hobby" value="xx">学习
+	<input type="button" onclick="myfn()" value="添加">
+	<div class="big"></div>
+	<div class="big">
+		<div class="small"></div>
+	</div>
+</body>
+</html>

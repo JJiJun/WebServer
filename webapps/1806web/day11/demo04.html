@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动态绑定事件</title>
+<script type="text/javascript">
+
+	function fn1(btn){
+		//此时btn为事件源对象
+		alert("元素绑定事!"+this)//此时代表window对象[object Window]
+		alert("元素绑定事!"+event.target)//[object HTMLInputElement]
+		//var obj = event.target||event.srcElement;获取事件源，这样写是考虑兼容性问题
+	}
+	
+	onload = function(){
+		mybtn.onclick = function(){
+			alert("动态绑定成功!"+this);//此时this代表事件源，[object HTMLInputElement]
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="元素绑定事件" onclick="fn1(this)">
+	<input id="mybtn" type="button" value="动态绑定事件">
+</body>
+</html>

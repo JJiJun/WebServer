@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	function myfn(){
+		alert("刘国斌");
+	}
+	setTimeout(function(){
+		$("input").trigger("click");
+	},3000);
+	
+	$(function(){
+		$("div").hover(function(){
+			$("div").css("background-color","red")
+		},function(){
+			$("div").css("background-color","blue");
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="button" value="点我试试" onclick="myfn()">
+	<div>我是一个div</div>
+</body>
+</html>

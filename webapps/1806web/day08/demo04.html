@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.ok {
+				display: none;/* 不显示 */
+			}
+			.err {
+				display: inline;/* 继续显示 */
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			var reg = /^\w{6,10}$/;
+			function checkusername(){
+				if(reg.test(username.value)){
+					s1.className = "ok";
+					return true;
+				}else{
+					s1.className = "err";
+					return false;
+				}
+			}
+			function checkpw(){
+				if(reg.test(password.value)){
+					s2.className = "ok";
+					return true;
+				}else{
+					s2.className = "err";
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="http://www.baidu.com" onsubmit="return checkusername()+checkpw()==2">
+			<!-- onblur事件：是失去焦点事件 -->
+			用户名：<input type="text" id="username" onblur="checkusername()">
+			<span id="s1" class="ok">格式错误</span><br>
+			密码：<input type="password" id="password" onblur="checkpw()">
+			<span id="s2" class="ok">格式错误</span><br>
+			<input type="submit" value="登录">
+		</form>
+	</body>
+</html>

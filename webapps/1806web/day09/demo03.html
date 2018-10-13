@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*两种声明对象的方式*/
+	/* function  Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.run = function(){
+			alert("name:"+this.name+" age:"+this.age);
+		}
+	}
+	var p = new Person("张三",18);
+	p.run(); */
+	//创建一个空的Person
+	/* function Person(){}
+	//创建Person对象
+	var p = new Person();
+	p.name = "刘备";
+	p.age = 18;
+	p.run=function(){
+		alert("name:"+this.name+" age:"+this.age);
+	}
+	p.run(); */
+	/*第二种创建对象的方式*/
+	var student = {
+			"name":"曹操",
+			"age":28,
+			"run":function(){
+				alert("name:"+this.name+" age:"+this.age);
+			}
+	}
+	student.run();
+</script>
+</head>
+<body>
+
+</body>
+</html>

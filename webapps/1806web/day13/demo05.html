@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		width: 80%;
+		margin: 0 auto;
+		border: 1px solid red;
+		/*合并边框和单元格边框*/
+		border-collapse: collapse;
+	}
+	th,td{
+		text-align: center;
+		border: 1px solid red;
+	}
+	#total{
+		text-align: right;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[value='加入购物车']").click(function(){
+			//通过按钮事件源得到他爸(td) 再得到他爸的兄弟们			
+			var name = $(this).parent().siblings().eq(0).text();
+			var amount = $(this).parent().siblings().eq(2).text()-1;
+			var price = $(this).parent().siblings().eq(1).text();
+			
+			
+			if(parseInt(amount)<0){
+				return;
+			}
+			
+			$(this).parent().siblings().eq(2).text(amount);
+			
+				if(($("td:contains('"+name+"')").length)>1){
+					$("table:last tr").each(function(){
+						//判断去除第一行，第一行里面没数值
+						if($(this).children().eq(0).text()==name){
+							var s = parseInt($(this).children().eq(2).children().eq(1).text());
+							s += 1;
+							$(this).children().eq(2).children().eq(1).text(s);
+							$(this).children().eq(3).text(price*s);
+						}	
+					})
+				}else{					
+					var tr = $("<tr></tr>");
+					var nametd = $("<td>"+name+"</td>");
+					
+					var pricetd = $("<td>"+price+"</td>");
+					
+					var counttd = $("<td><input type='button' value='-' onclick='countfn(-1)'><span>1</span><input id='s1' type='button' value='+' onclick='countfn(1)'></td>");
+					
+					var moneytd = $("<td>"+price+"</td>");
+					
+					var deltd = $("<td><input type='button' value='删除' onclick='delfn(this)'></td>");
+					
+					tr.append(nametd);
+					tr.append(pricetd);
+					tr.append(counttd);
+					tr.append(moneytd);
+					tr.append(deltd);
+					$("#total").before(tr);
+				}
+			
+			calfn();
+		})
+	})
+	function delfn(btn){
+		$(btn).parent().parent().remove();
+		
+		calfn();
+	}
+	
+	function countfn(x){
+		//先得到事件源
+		var obj = event.target;		
+		var oldName = $(obj).parent().siblings().eq(0).text();
+		//var s = parseInt($("td:contains('"+oldName+"')").eq(0).siblings().eq(1).text());
+		
+		
+		var s;
+		
+		$("table:first tr").each(function(){
+			//判断去除第一行，第一行里面没数值
+			if($(this).children().eq(0).text()==oldName){
+				s = parseInt($(this).children().eq(2).text());
+			}	
+		})
+		
+		
+		
+		//取出原来数值
+		//var oldCount = parseInt($(obj).siblings("span").text());
+		var count = parseInt($(obj).siblings("span").text());
+		var newCount = count+x;
+		s = s-x;
+		if(newCount==0){
+			//$(obj).parent().parent().remove();删除行
+			//只允许至少为1
+			newCount=1;
+			return;
+		}
+		if(s<0){
+			return;
+		}
+		//$(this).children().eq(2).text(s);
+		$(obj).siblings("span").text(newCount);
+		$("td:contains('"+oldName+"')").eq(0).siblings().eq(1).text(s);
+		//得单价
+		var price = $(obj).parent().prev().text();
+		//得金额
+		$(obj).parent().next().text(price*newCount);
+		
+		//计算总价
+		calfn();
+	}
+	
+	function calfn(){
+		var total = 0;
+		$("table:eq(1) tr").each(function(){
+			//判断去除第一行，第一行里面没数值	
+			var money = parseInt($(this).children().eq(3).text());
+			if(money){
+				total+=money;
+			}
+		})
+		$("#total td").text("总价:"+total);
+	}
+</script>
+</head>
+<body>
+	<table>
+		<caption>特价商品</caption>
+		<tr>
+			<th>商品名称</th><th>商品单价</th><th>商品库存</th><th>好评率</th><th>操作</th>
+		</tr>
+		<tr>
+			<td>水杯</td><td>25</td><td>5</td><td>89</td><td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr>
+			<td>鼠标</td><td>50</td><td>100</td><td>92</td><td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr>
+			<td>键盘</td><td>120</td><td>30</td><td>95</td><td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr><td>学习卡</td><td>99</td><td>10</td><td>100</td><td><input type="button" value="加入购物车"></td>
+		</tr>
+	</table>
+	<table>
+		<caption>购物车</caption>
+		<tr>
+			<th>名称</th><th>单价</th><th>数量</th><th>金额</th><th>操作</th>
+		</tr>
+		<tr id="total">
+			<td colspan="5">总价:0</td>
+		<tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	li{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul li ul{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		
+	}
+	function myfn(obj){
+		//得到所有的第二次ul
+		if(event.target.className=="title"){
+			var obj = event.target;
+			var lis = document.getElementsByClassName("title");
+			for(var i=0;i<lis.length;i++){
+				var li = lis[i];
+				//找到不是点击的li
+				if(obj!=li){
+					var ul = li.getElementsByTagName("ul")[0];
+					ul.style.display="none";
+				}
+			}
+			
+			var ul = obj.getElementsByTagName("ul")[0];
+			//当前隐藏让其显示
+			if(ul.style.display=="none"||ul.style.display==""){// 双等于有点迷。此处可以用,此处判断空字符串的原因是。通过js代码操作的
+				ul.style.display="block";// 样式为内联样式，第一次虽然元素隐藏，但是隐藏样式并非内联，所以取出的内联样式为空字符串。
+			}else{//当前显示让其隐藏
+				ul.style.display="none";
+			}
+			
+		}
+
+	}
+</script>
+</head>
+<body>
+	<ul onclick="myfn()">
+		<li class="title">美女好友
+			<ul id="ul1">
+				<li>刘亦菲</li>
+				<li>赵丽颖</li>
+				<li>西施</li>
+				<li>貂蝉</li>
+			</ul>
+		</li>
+		<li class="title">工作好友
+			<ul id="ul2">
+				<li>马云</li>
+				<li>李彦宏</li>
+				<li>马化腾</li>
+			</ul>
+		</li>
+		<li class="title">水果
+			<ul id="ul3">
+				<li>苹果</li>
+				<li>橘子</li>
+				<li>香蕉</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

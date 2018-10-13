@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn(x){
+		var input = document.getElementById("input");
+		var div = document.getElementById("d1");
+			div.innerHTML+="<h"+x+">"+input.value+"</h"+x+">"
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input">
+	<input type="button" value="大" onclick="fn(1)">
+	<input type="button" value="中" onclick="fn(3)">
+	<input type="button" value="小" onclick="fn(6)">
+	<div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>限制不允许输入中文字符</title>
+<script type="text/javascript">
+	function checkCN(str){
+		if(escape(str).indexOf("%u")<0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function check(){
+		var username = document.getElementById("username");
+		var userName = username.value;
+		if(username==""){
+			alert("请输入用户名!");
+			username.focus();
+			return;
+		}
+		if(!checkCN(userName)){
+			alert("用户名不允许包含中文字符!");
+			username.focus();
+			return;
+		}
+		document.getElementById("myform").submit();
+	}
+</script>
+</head>
+<body>
+	<form action="http://doc.tedu.cn" id="myform">
+		<input type="text">
+		<input type="text" name="username" id="username">
+		<input type="button" value="提交" onclick="check()">
+	</form>
+</body>
+</html>

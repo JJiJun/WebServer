@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function add(){
+				for(var i=1;i<=input1.value;i++){
+					var rowDiv = document.createElement("div");
+					document.body.appendChild(rowDiv);
+					rowDiv.className="d";
+					for(var j=1;j<=input2.value;j++){
+						var colDiv = document.createElement("div");
+						colDiv.className="d1";
+						rowDiv.appendChild(colDiv);
+					}
+				}
+			}
+		</script>
+		<style type="text/css">
+			.d{
+				overflow: hidden;/*所有子元素都浮动了，解决高度为0的问题*/
+			}
+			.d1{
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="input1">
+		<input type="text" id="input2">
+		<input type="button" value="添加" onclick="add()">
+	</body>
+</html>
